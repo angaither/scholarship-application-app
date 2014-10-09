@@ -73,7 +73,6 @@
             @foreach($possible_ratings as $rating)
               @if ($app_rating == $rating)
                 {{ Form::submit($rating, ['class' => 'btn btn-info btn-md active', 'name' => 'rating']) }}
-
               @else
                 {{ Form::submit($rating, ['class' => 'btn btn-info btn-md', 'name' => 'rating']) }}
               @endif
@@ -82,6 +81,11 @@
 
           {{ Form::close() }}
         @endif
+
+
+        {{ link_to_route('user.destroy',$user['id'], 'Delete', array('class' => 'btn btn-small btn-danger delete-event glyphicon glyphicon-trash', 'data-title'=>'Delete this dude', 'data-content' => 'Are you sure you want to delete this event?', 'onClick'=>'return false;')) }}
+
+
 
       </div>
 

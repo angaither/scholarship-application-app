@@ -15,7 +15,9 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th> {{ sort_applicants_by('last_name', 'Name') }}</th>
+                <th> {{ sort_applicants_by('last_name', 'Name') }}
+                 </span>
+                </th>
                 <th>
                 <div class="dropdown">
                     <a data-toggle="dropdown" href="#">Gender <span class='glyphicon glyphicon-chevron-down'/> </a>

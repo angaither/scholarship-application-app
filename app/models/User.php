@@ -120,6 +120,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
   public static function getUserInfo($id)
   {
-    return $user = User::whereId($id)->select('first_name', 'last_name', 'email')->first()->toArray();
+    return $user = User::whereId($id)->select('id', 'first_name', 'last_name', 'email')->first()->toArray();
   }
 }

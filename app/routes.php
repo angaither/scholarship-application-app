@@ -69,6 +69,9 @@ Route::group(['before' => 'role:administrator', 'prefix' => 'admin'], function()
   #Emails
   Route::get('email', ['as' => 'emails', 'uses' => 'EmailController@index']);
   Route::post('email', ['as' => 'emails.update', 'uses' => 'EmailController@update']);
+
+  # User destroy
+  Route::get('user/{id}/delete', ['as' => 'user.destroy', 'uses' => 'UserController@destroy']);
 });
 
 
