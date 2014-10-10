@@ -13,10 +13,13 @@ class UserController extends \BaseController {
     $user = User::with('application', 'profile')->find($id);
     $race = Profile::with('race')->find($user->profile->id);
     $application = Application::with('recommendation', 'rating')->find($user->application->id);
-    // $recommendation = Recommendation::with('recommendation_token')->find($application->recommendation->id);
+    foreach ($application->recommendation as $rec) {
+      $recommendations = Recommendation::with('recommendation_token')->find($rec->id);
+    }
     $user->delete();
     $race->delete();
     $application->delete();
+    $recommendations->delete();
 
     return "done";
   }
