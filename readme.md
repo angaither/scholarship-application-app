@@ -1,5 +1,7 @@
 # Scholarship Application App
 
+
+
 ## Prerequisites
 1.  Composer
 2.  Node
